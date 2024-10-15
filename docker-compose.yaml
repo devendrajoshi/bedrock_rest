@@ -1,25 +1,12 @@
 version: '3.8'
 
 services:
-  ollama:
-    build:
-      context: .
-      dockerfile: Dockerfile.ollama
-    container_name: ollama-container
-    ports:
-      - "11434:11434"
-    volumes:
-      - ${HOST_OLLAMA_HOME}:/root/.ollama
-    restart: always
-
   fastapi:
     build:
       context: .
       dockerfile: Dockerfile.fastapi
     container_name: fastapi-container
     restart: always
-    depends_on:
-      - ollama
     ports:
       - "9001:9001"
     volumes:

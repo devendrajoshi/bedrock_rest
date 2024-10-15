@@ -5,7 +5,6 @@ fastapi
 uvicorn
 langchain 
 langchain-chroma
-langchain_ollama
 PyPDF2
 langchain-huggingface
 boto3
