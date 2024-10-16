@@ -17,6 +17,9 @@ RUN python -m pip install --trusted-host files.pythonhosted.org --trusted-host p
 # install gunicorn
 RUN pip install --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org gunicorn
 
+# Install awscli
+RUN pip install --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org awscli
+
 WORKDIR /app
 COPY ./app /app
 

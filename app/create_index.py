@@ -14,9 +14,15 @@ load_dotenv()
 
 # Load environment variables
 INDEX_PATH = os.getenv('INDEX_PATH', './index/')
+#make sure INDEX_PATH ends with '/'
+if not INDEX_PATH.endswith('/'):
+    INDEX_PATH = INDEX_PATH + '/'
 EMBEDDING_MODEL_NAME = os.getenv('EMBEDDING_MODEL_NAME', 'sentence-transformers/all-mpnet-base-v2')
 LOCAL_DOCS_PATH = os.getenv('LOCAL_DOCS_PATH', './localdocs/')
-#LOCAL_DOCS_PATH = os.getenv('LOCAL_DOCS_PATH', 's3://dataseek.dev.net/rag_docs/')
+#make sure LOCAL_DOCS_PATH ends with '/'
+if not LOCAL_DOCS_PATH.endswith('/'):
+    LOCAL_DOCS_PATH = LOCAL_DOCS_PATH + '/'
+    
 SPLITTER_CHUNK_SIZE = int(os.getenv('SPLITTER_CHUNK_SIZE', 1000))
 SPLITTER_CHUNK_OVERLAP = int(os.getenv('SPLITTER_CHUNK_OVERLAP', 200))
 

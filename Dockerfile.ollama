@@ -1,8 +1,0 @@
-FROM ollama/ollama:latest
-
-RUN apt-get update && apt-get install -y ca-certificates && apt-get install -y curl
-RUN curl -k -o ollama_registry.crt https://registry.ollama.ai
-RUN cp ollama_registry.crt /usr/local/share/ca-certificates/ollama_registry.crt
-
-# Update the certificate database
-RUN update-ca-certificates --fresh
