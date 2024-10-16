@@ -3,7 +3,7 @@
 ## Overview
 RAG AWS is a project focused on implementing the Retrieval-Augmented Generation (RAG) methodology. This approach enhances the capabilities of language models by integrating retrieval mechanisms to provide more accurate and contextually relevant responses. We leverage the Large Language Model (LLM) from AWS Bedrock to achieve this. 
 
-If you prefer to implement this without AWS Bedrock, you can follow this tutorial.
+If you prefer to implement this without AWS Bedrock, you can follow this tutorial https://devendrajoshi.github.io/blogs/rag_tutorial.html.
 
 ## Table of Contents
 - Installation
