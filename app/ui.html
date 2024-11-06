@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI UI</title>
+</head>
+<body>
+    <h1>FastAPI Query</h1>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Enter your email content here..."></textarea><br>
+    <button onclick="sendQuery()">Send</button>
+    <div id="loading" style="display: none;">Loading...</div>
+    <div id="result"></div>
+
+    <script>
+        async function sendQuery() {
+            const inputText = document.getElementById('inputText').value;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').innerText = '';
+
+            const response = await fetch('/query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email_content: inputText })
+            });
+
+            const result = await response.json();
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+        }
+    </script>
+</body>
+</html>

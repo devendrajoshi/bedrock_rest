@@ -1,15 +1,9 @@
-requests
 python-dotenv
 fastapi
+fastapi_cache
 uvicorn
-
 langchain
 langchain-core
-langchain-chroma
-langchain-huggingface
 langchain-aws
-
-PyPDF2
-
 awscli
 boto3
