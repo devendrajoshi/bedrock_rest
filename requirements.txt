@@ -1,9 +1,9 @@
-requests  
+requests
 python-dotenv
 fastapi
 uvicorn
 
-langchain 
+langchain
 langchain-core
 langchain-chroma
 langchain-huggingface
@@ -11,5 +11,5 @@ langchain-aws
 
 PyPDF2
 
-awscli  
+awscli
 boto3
