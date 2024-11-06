@@ -11,12 +11,11 @@
     <button onclick="sendQuery()">Send</button>
     <div id="loading" style="display: none;">Loading...</div>
     <div id="result"></div>
-
     <script>
         async function sendQuery() {
             const inputText = document.getElementById('inputText').value;
             document.getElementById('loading').style.display = 'block';
-            document.getElementById('result').innerText = '';
+            document.getElementById ('result').innerText = '';
 
             const response = await fetch('/query', {
                 method: 'POST',
@@ -28,7 +27,7 @@
 
             const result = await response.json();
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+            document.getElementById('result').innerText = JSON.stringify(result.email_response, null, 2);
         }
     </script>
 </body>
